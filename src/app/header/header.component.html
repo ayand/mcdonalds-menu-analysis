@@ -1,3 +1,19 @@
-<p>
-  header works!
-</p>
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color:#ff5050">
+    <a class="navbar-brand" routerLink="/">McDonald's Menu Planner</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/browse" routerLinkActive="active">Item Lookup<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/select" routerLinkActive="active">Menu Overview<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/meal-analysis" routerLinkActive="active">Meal Analysis<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+</nav>

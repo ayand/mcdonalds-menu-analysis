@@ -1,3 +1,15 @@
-<p>
-  lookup works!
-</p>
+<div class="food-list">
+  <table  class="table table-striped">
+        <tr style="text-align:center; background-color:#444444; color:white">
+          <th>Category</th>
+          <th>Food Item</th>
+          <th><button class="btn btn-success" style="opacity:0">View Details</button></th>
+        </tr>
+      <tr *ngFor="let food of foodItems">
+          <td align="center">{{ food["Category"] }}</td>
+          <td align="center">{{ food["Item"] }}</td>
+          <td align="center"><button class="btn btn-success" style="cursor:pointer">View Details</button></td>
+      </tr>
+
+  </table>
+</div>

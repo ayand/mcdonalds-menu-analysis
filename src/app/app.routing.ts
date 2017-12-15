@@ -11,7 +11,8 @@ const appRoutes: Routes = [
     { path: '', component: HomepageComponent },
     { path: 'browse', component: LookupComponent },
     { path: 'select', component: ScatterplotComponent },
-    { path: 'meal-analysis', component: MealAnalysisComponent }
+    { path: 'meal-analysis', component: MealAnalysisComponent },
+    { path: "**", redirectTo: '' }
 ]
 
 @NgModule({
@@ -21,5 +22,5 @@ const appRoutes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule {
-    
+
 }

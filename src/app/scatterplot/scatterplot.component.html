@@ -1,3 +1,61 @@
-<p>
-  scatterplot works!
-</p>
+<h3 align="center">McDonald's Correlation Analysis</h3>
+<br>
+<br>
+<div class="row">
+    <div class="col-md-6">
+      <h4 align="center">Food</h4>
+      <br>
+      <div class="row">
+          <div class="col-md-6">
+            <h5 align="center">Select X Variable</h5>
+            <select #foodXVar (change)="setVariable('foodX', foodXVar.value)">
+                <option *ngFor="let category of nutrientCategories" [value]="category">
+                    {{ category }}
+                </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <h5 align="center">Select Y Variable</h5>
+            <select #foodYVar (change)="setVariable('foodY', foodYVar.value)">
+                <option *ngFor="let category of nutrientCategories" [value]="category">
+                    {{ category }}
+                </option>
+            </select>
+          </div>
+      </div>
+      <br>
+      <br>
+      <app-graph [data]="foodItems" [xVar]="foodX" [yVar]="foodY"></app-graph>
+    </div>
+    <div class="col-md-6">
+      <h4 align="center">Drink</h4>
+      <br>
+      <div class="row">
+          <div class="col-md-6">
+            <h5 align="center">Select X Variable</h5>
+            <select #drinkXVar (change)="setVariable('drinkX', drinkXVar.value)">
+                <option *ngFor="let category of nutrientCategories" [value]="category">
+                    {{ category }}
+                </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <h5 align="center">Select Y Variable</h5>
+            <select #drinkYVar (change)="setVariable('drinkY', drinkYVar.value)">
+                <option *ngFor="let category of nutrientCategories" [value]="category">
+                    {{ category }}
+                </option>
+            </select>
+          </div>
+      </div>
+      <br>
+      <br>
+      <app-graph [data]="drinkItems" [xVar]="drinkX" [yVar]="drinkY"></app-graph>
+    </div>
+</div>
+<br>
+<br>
+<!--<p>{{ drinkX }}</p>
+<p>{{ drinkY }}</p>
+<p>{{ foodX }}</p>
+<p>{{ foodY }}</p>-->

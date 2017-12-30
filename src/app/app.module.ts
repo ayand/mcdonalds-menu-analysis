@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { LookupComponent } from './lookup/lookup.component';
 
 import { FoodService } from "./food.service";
+import { GraphComponent } from './scatterplot/graph/graph.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FoodService } from "./food.service";
     ScatterplotComponent,
     MealAnalysisComponent,
     HomepageComponent,
-    LookupComponent
+    LookupComponent,
+    GraphComponent
   ],
   imports: [
     BrowserModule,

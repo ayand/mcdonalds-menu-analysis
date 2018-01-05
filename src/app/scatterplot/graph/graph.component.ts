@@ -44,8 +44,8 @@ export class GraphComponent implements OnInit, OnChanges {
   createScatterPlot() {
       //console.log(this.data);
       this.element = this.chartContainer.nativeElement;
-      this.width = 450;
-      this.height = 450;
+      this.width = 350;
+      this.height = 350;
       this.svg = d3.select(this.element)
           .append("svg")
           .attr("width", this.width)
@@ -53,18 +53,18 @@ export class GraphComponent implements OnInit, OnChanges {
 
       this.svg.append("rect")
           .attr("fill", "#DDDDDD")
-          .attr("width", 450)
-          .attr("height", 450);
+          .attr("width", 350)
+          .attr("height", 350);
 
-      this.xScale = d3.scaleLinear().domain([0, 1000]).range([50, 400]);
-      this.yScale = d3.scaleLinear().domain([0, 1000]).range([400, 50]);
+      this.xScale = d3.scaleLinear().domain([0, 1000]).range([50, 300]);
+      this.yScale = d3.scaleLinear().domain([0, 1000]).range([300, 50]);
 
       this.xAxis = d3.axisBottom(this.xScale);
       this.yAxis = d3.axisLeft(this.yScale);
 
       this.svg.append("g")
           .attr("class", "xAxis")
-          .attr("transform", "translate(0,400)")
+          .attr("transform", "translate(0,300)")
           .call(this.xAxis);
 
       this.svg.append("g")
@@ -79,7 +79,9 @@ export class GraphComponent implements OnInit, OnChanges {
 
       this.svg.append("text")
           .attr("class", "xVariable")
-          .attr("transform", "translate(230, 440)")
+          .attr("x", 340)
+          .attr("y", 340)
+          .attr("text-anchor", "end")
           .text("X variable");
 
       this.colorMap = {
@@ -135,6 +137,7 @@ export class GraphComponent implements OnInit, OnChanges {
         const dotsEnter = dots.enter().append("circle")
             .attr("class", "dot")
             .attr("r", 5)
+            .style("cursor", "pointer")
             .style("opacity", 0.7)
             .attr("fill", d => this.colorMap[d["Category"]])
             .on("mouseover", d => {

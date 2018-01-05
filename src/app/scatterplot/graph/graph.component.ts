@@ -145,13 +145,17 @@ export class GraphComponent implements OnInit, OnChanges {
                     .duration(1000)
                     .style("opacity", 0.8);
 
-                const htmlText = "<table style='font-size:8px'>\
-                                    <tr>\
-                                      <td>\
-                                        <h6>" + d["Item"] + "\
-                                      </td>\
+                const htmlText = "<table style='font-size:10px'>\
+                                    <tr align='center'>\
+                                      <td align='center'>" + d["Item"] + "</td>\
                                     </tr>\
                                     <tr>\
+                                      <td>" + this.xVar + "</td>\
+                                      <td>" + d[this.xVar] + "</td>\
+                                    </tr>\
+                                    <tr>\
+                                      <td>" + this.yVar + "</td>\
+                                      <td>" + d[this.yVar] + "</td>\
                                     </tr>\
                                   </table>";
 

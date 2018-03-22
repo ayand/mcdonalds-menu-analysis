@@ -6,9 +6,12 @@ f = open("menu.csv", "r")
 jsonArray = []
 
 reader = csv.DictReader(f)
+idNum = 0
 
 for row in reader:
+    idNum += 1
     newRow = row
+    newRow["id"] = idNum
     newRow["Calories"] = int(row["Calories"])
     newRow["Calories from Fat"] = int(row["Calories from Fat"])
     newRow["Total Fat (% Daily Value)"] = int(row["Total Fat (% Daily Value)"])
